@@ -132,7 +132,9 @@ Partial Class CarInventory
         '
         'lvCarList
         '
+        Me.lvCarList.CheckBoxes = True
         Me.lvCarList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colNewStatus, Me.colMake, Me.colModel, Me.colYear, Me.colPrice})
+        Me.lvCarList.FullRowSelect = True
         Me.lvCarList.HideSelection = False
         Me.lvCarList.Location = New System.Drawing.Point(15, 152)
         Me.lvCarList.MultiSelect = False
@@ -184,6 +186,7 @@ Partial Class CarInventory
         '
         'btnReset
         '
+        Me.btnReset.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnReset.Location = New System.Drawing.Point(445, 395)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(75, 37)
@@ -202,8 +205,10 @@ Partial Class CarInventory
         '
         'CarInventory
         '
+        Me.AcceptButton = Me.btnEnter
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnReset
         Me.ClientSize = New System.Drawing.Size(632, 450)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnReset)
@@ -220,6 +225,8 @@ Partial Class CarInventory
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "CarInventory"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Car Inventory"

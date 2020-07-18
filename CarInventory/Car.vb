@@ -19,8 +19,8 @@ Public Class Car
     ''' create a new car using default value
     ''' </summary>
     Public Sub New()
-        identificationNumber = count
-        count += 1
+        IdentificationNumber = Count
+        Count += 1
 
 
     End Sub

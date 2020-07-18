@@ -75,6 +75,30 @@ Public Class CarInventory
 
     End Sub
 
+    Private Sub ListSelectedIndexChanged(sender As Object, e As EventArgs) Handles lvCarList.SelectedIndexChanged
+        If (Not lvCarList.FocusedItem Is Nothing) Then
+            currentlySelectedIndex = lvCarList.FocusedItem.Index
+            Dim car As Car = cars(currentlySelectedIndex)
+
+            editMode = True
+
+            cbMake.Text = car.CarMake
+            tbModel.Text = car.CarModel
+            cbYear.Text = car.CarYear.ToString
+            tbPrice.Text = car.CarPrice.ToString
+            ckNewStatus.Checked = car.CarNewStatus
+
+            tbOutput.Text = "Loaded student data to update"
+
+
+
+
+        End If
+    End Sub
+
+
+
+
 
 
 
@@ -141,6 +165,18 @@ Public Class CarInventory
 
 
     End Sub
+
+    Private Sub lvCars_itemCheck(sender As Object, e As ItemCheckEventArgs) Handles lvCarList.ItemCheck
+
+        If (Not updatingData) Then
+            e.NewValue = e.CurrentValue
+        End If
+
+    End Sub
+
+
+
+
 
 #End Region
 
